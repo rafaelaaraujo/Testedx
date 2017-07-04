@@ -74,12 +74,12 @@ class MenuPresenter implements MenuContract.Presenter {
 
     @Override
     public void updateItem(Sandwich s) {
-        upgrateName(s);
+        updateName(s);
         updateIngredientsName(s);
         sandwiches.set(s.getId() - 1, s);
     }
 
-    private void upgrateName(Sandwich s) {
+    private void updateName(Sandwich s) {
         if (!s.getName().contains(ITEM_EDITED_IDENTIFIER))
             s.setName(s.getName() + ITEM_EDITED_IDENTIFIER);
     }

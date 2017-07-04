@@ -32,6 +32,8 @@ class EditOrderPresenter implements EditOrderContract.Presenter {
 
     @Override
     public void start() {
+        if (sandwich != null && sandwich.getPromotionEnum() != PromotionEnum.NONE)
+            mOrderView.updateDiscounts(StringUtil.formatNumberToCurrent(sandwich.getTotalWithDiscounts()), sandwich.getPromotionEnum().toString());
         loadIngredientsOptions();
     }
 

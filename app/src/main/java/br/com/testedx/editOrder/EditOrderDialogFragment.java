@@ -49,8 +49,6 @@ public class EditOrderDialogFragment extends DialogFragment implements EditOrder
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_editorder, container, false);
         binding.setSandwich(s);
         binding.setCallback(this);
-        if (s != null && s.getPromotionEnum() != PromotionEnum.NONE)
-            updateDiscounts(StringUtil.formatNumberToCurrent(s.getTotalWithDiscounts()), s.getPromotionEnum().toString());
         return binding.getRoot();
     }
 
