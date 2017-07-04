@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Testedx</string>
+    <string name="title_activity_main">Sanduba</string>
+    <string name="discounts_value">Total com desconto %1$s:  %2$s</string>
+    <string name="total_value">Total do pedido: %s</string>
+    <string name="shopping_card">Shopping card</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="subtotal_value">Subtotal: %s</string>
+    <string name="cart">Carrinho</string>
+    <string name="search_promotions">Buscando promoções</string>
+    <string name="waiting">Aguarde</string>
+    <string name="erro_search_menu">Houve um erro para carregar o cardápio tente novamente</string>
+    <string name="sucess_add_cart">Adicionado com sucesso ao carrinho</string>
+    <string name="error_add_cart">Houve um erro para carregar o cardápio tente novamente</string>
+    <string name="add_cart">Adicionando no carrinho</string>
+    <string name="search_menu">Carregando cardápio</string>
+    <string name="menu_message_tittle">Selecione um item do Cardapio para realizar o pedido:</string>
+    <string name="add">adicionar</string>
+    <string name="edit">editar</string>
+    <string name="cart_empity">Você não possui nenhum item no carrinho</string>
+    <string name="cancel">Cancelar</string>
+    <string name="finalize">Finalizar</string>
+    <string name="promotion_empity">Infelizmente não temos nenhuma promoçao disponível no momento</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="card_pio">menu</string>
+    <string name="promotions">promotions</string>
+</resources>
