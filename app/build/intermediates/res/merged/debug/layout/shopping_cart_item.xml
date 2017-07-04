@@ -4,12 +4,18 @@
     <data>
 
         <import type="br.com.testedx.util.StringUtil" />
+
         <import type="br.com.testedx.enums.PromotionEnum" />
+
         <import type="android.view.View" />
 
         <variable
             name="s"
             type="br.com.testedx.model.Sandwich" />
+
+        <variable
+            name="order"
+            type="br.com.testedx.shoppingCart.model.Order" />
 
     </data>
 
@@ -46,11 +52,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/picture"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        app:addImage="@{s.getImage()}"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/picture"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:addImage="@{s.getImage()}" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@{StringUtil.getDateFormated(order.getDate())}"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -99,11 +120,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:visibility="@{s.getPromotionEnum() == PromotionEnum.NONE ? View.GONE:View.VISIBLE}"
                         android:text="@{@string/discounts_value(s.getPromotionEnum().toString(), StringUtil.formatNumberToCurrent(s.getTotalWithDiscounts()))}"
                         android:textAlignment="textEnd"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="@{s.getPromotionEnum() == PromotionEnum.NONE ? View.GONE:View.VISIBLE}" />
 
                 </LinearLayout>
             </LinearLayout>

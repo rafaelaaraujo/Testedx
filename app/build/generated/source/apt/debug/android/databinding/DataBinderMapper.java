@@ -76,6 +76,7 @@ class DataBinderMapper  {
             ,"callback"
             ,"ingredient"
             ,"ingredients"
+            ,"order"
             ,"price"
             ,"priceDiscount"
             ,"promotion"

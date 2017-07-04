@@ -3,6 +3,7 @@ package br.com.testedx.util;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 /**
@@ -22,6 +23,11 @@ public class StringUtil {
         } catch (Exception e) {
             return NumberFormat.getCurrencyInstance(new Locale("pt", "BR")).format(f);
         }
+    }
+
+    public static String getDateFormated(long date){
+        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy",Locale.US);
+        return df2.format(date);
     }
 
 }

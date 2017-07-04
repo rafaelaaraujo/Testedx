@@ -28,7 +28,7 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ViewHolder> implem
     private List<Order> sandwichList;
     private ShoppingCartContract.Presenter presenter;
 
-    ShoppingCartAdapter(List<Order> sandwichList, ShoppingCartContract.Presenter presenter ) {
+    ShoppingCartAdapter(List<Order> sandwichList, ShoppingCartContract.Presenter presenter) {
         this.sandwichList = sandwichList;
         this.presenter = presenter;
     }
@@ -42,7 +42,8 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ViewHolder> implem
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Order order = sandwichList.get(position);
-        presenter.loadSandwichItem(order,holder,this);
+        holder.getBinding().setVariable(BR.order, order);
+        presenter.loadSandwichItem(order, holder, this);
     }
 
     @Override
@@ -62,6 +63,6 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ViewHolder> implem
 
     @BindingAdapter("addImage")
     public static void addImage(ImageView v, String image) {
-        ImageLoader.getInstance().displayImage(image,v, ImageUtil.getSandwichImageOptions());
+        ImageLoader.getInstance().displayImage(image, v, ImageUtil.getSandwichImageOptions());
     }
 }

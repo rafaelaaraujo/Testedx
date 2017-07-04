@@ -37,8 +37,11 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
     }
 
     private void setupRecyclerView() {
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
         mRecyclerView = (RecyclerView) findViewById(R.id.recicle_cart);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(mLayoutManager);
     }
 
     @Override

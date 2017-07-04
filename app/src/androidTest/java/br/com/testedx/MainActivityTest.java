@@ -42,5 +42,4 @@ public class MainActivityTest {
         onView(withId(R.id.cart)).perform(click());
         onView(withId(R.id.shopping_cart)).check(matches(isDisplayed()));
     }
-
 }

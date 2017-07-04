@@ -149,7 +149,11 @@ class MenuPresenter implements MenuContract.Presenter {
     private void addListIngredientsAndTotal(Sandwich sandwich) {
         for (int ingredient : sandwich.getIngredients()) {
             Ingredient i = ingredientsList.get(ingredient);
-            sandwich.addItemListIngredientsObj(i);
+            try {
+                sandwich.addItemListIngredientsObj(i);
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -1,8 +1,10 @@
 package br.com.testedx;
 
+import android.os.SystemClock;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.v7.widget.RecyclerView;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -35,16 +37,14 @@ public class ShoppingCartActivityTest {
     public void addItemInCart_openActivity() {
         onView(withId(R.id.recicle_menu)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(1, RecyclerViewMatcher.clickChildViewWithId(R.id.btn_add_cart)));
+        SystemClock.sleep(1000);
         onView(withText("OK")).perform(click());
         onView(withId(R.id.cart)).perform(click());
     }
 
     @Test
     public void checkItemTotal() {
-        final int numberOfAdapterItems = getRecicleItemCount(R.id.recicle_cart) -1;
-
-        onView(withId(R.id.recicle_cart)).perform(RecyclerViewActions.scrollToPosition(numberOfAdapterItems));
-        onView(nthChildOf(withId(R.id.recicle_cart), numberOfAdapterItems)).check(matches(hasDescendant(withText("X-Burger"))));
-        onView(nthChildOf(withId(R.id.recicle_cart), numberOfAdapterItems)).check(matches(hasDescendant(withText("Subtotal: R$5,50"))));
+        onView(nthChildOf(withId(R.id.recicle_cart), 0)).check(matches(hasDescendant(withText("X-Burger"))));
+        onView(nthChildOf(withId(R.id.recicle_cart), 0)).check(matches(hasDescendant(withText("Subtotal: R$5,50"))));
     }
 }

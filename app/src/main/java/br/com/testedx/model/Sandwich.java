@@ -93,11 +93,11 @@ public class Sandwich implements Parcelable {
         this.promotionEnum = promotionEnum;
     }
 
-    public void addItemListIngredientsObj(Ingredient i) {
+    public void addItemListIngredientsObj(Ingredient i) throws CloneNotSupportedException {
         i.setQuantity(1);
         total += i.getPrice();
         ingredientsName += i.getName()+", ";
-        ingredientsObj.put(i.getId(),Ingredient.getNewIngredient(i.getId(),i.getName(),i.getPrice(),i.getImage(),i.getQuantity()));
+        ingredientsObj.put(i.getId(),i.clone());
     }
 
     public double getTotalWithDiscounts() {

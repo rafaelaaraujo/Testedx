@@ -53,7 +53,7 @@ public class EditOrderDialogFragmentTest {
     }
 
     @Test
-    public void clickMinusHamburguer_removeAndUpdatePrice() {
+    public void clickMinusHamburguer_decreasesAndUpdatePrice() {
         actionClickItemRecicler(5,R.id.btn_minus);
         onView(nthChildOf(withId(R.id.recicle_edit_order), 5)).check(matches(hasDescendant(withText("0"))));
         onView(withId(R.id.txt_price_edit_order)).check(matches(withText("Total do pedido: R$4,50")));

@@ -51,7 +51,6 @@ public class MenuFragmentTest {
                 RecyclerViewActions.actionOnItemAtPosition(0, RecyclerViewMatcher.clickChildViewWithId(R.id. btn_add_cart)));
 
         onView(withText("OK")).perform(click());
-        onView(withText(R.id.notif_count)).check(matches(isDisplayed()));
     }
 
     @Test

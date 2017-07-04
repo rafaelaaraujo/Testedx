@@ -66,15 +66,12 @@ public class RecyclerViewMatcher {
             @Override
             public boolean matchesSafely(View view) {
                 RecyclerView listView = (RecyclerView) view;
-
                 numberOfAdapterItems[0] = listView.getAdapter().getItemCount();
-
                 return true;
             }
 
             @Override
             public void describeTo(Description description) {
-
             }
         }));
 

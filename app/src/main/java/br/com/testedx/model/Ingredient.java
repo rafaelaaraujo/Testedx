@@ -8,7 +8,7 @@ import android.os.Parcelable;
  * Describes ingredients present in snacks
  */
 
-public class Ingredient implements Parcelable {
+public class Ingredient implements Parcelable, Cloneable{
 
     private int id;
     private String name;
@@ -93,8 +93,9 @@ public class Ingredient implements Parcelable {
         this.quantity = quantity;
     }
 
-    static Ingredient getNewIngredient(int id, String name, double price, String image, int quantity){
-        Ingredient i = new Ingredient();
+    @Override
+    protected Ingredient clone() throws CloneNotSupportedException {
+        Ingredient i = (Ingredient) super.clone();
         i.setId(id);
         i.setName(name);
         i.setPrice(price);
