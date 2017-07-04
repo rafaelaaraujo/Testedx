@@ -9,7 +9,6 @@ import br.com.testedx.model.Sandwich;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 public enum PromotionEnum {
 
     LIGHT, CARNE, QUEIJO, NONE;

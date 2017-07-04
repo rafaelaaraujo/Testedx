@@ -26,7 +26,6 @@ import br.com.testedx.util.ImageUtil;
  * Created by rafaela.araujo on 30/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class EditOrderAdapter extends RecyclerView.Adapter<EditOrderAdapter.ViewHolder> {
 
     private List<Ingredient> ingredients;

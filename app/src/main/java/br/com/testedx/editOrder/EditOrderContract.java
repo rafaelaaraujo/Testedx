@@ -13,7 +13,6 @@ import br.com.testedx.model.Ingredient;
  * Created by rafaela on 29/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class EditOrderContract {
 
     interface View extends BaseView<EditOrderContract.Presenter> {
@@ -25,14 +24,11 @@ class EditOrderContract {
         void updateDiscounts(String totalWithDiscounts, String promotionEnum);
 
         void updateIngredients(String ingredients);
-
     }
 
     interface Presenter extends BasePresenter {
 
         void applyDiscounts();
-
-        void finishOrder(MainActivity activity);
 
         int loadValueIngredient(Ingredient item, int value, boolean plus);
 

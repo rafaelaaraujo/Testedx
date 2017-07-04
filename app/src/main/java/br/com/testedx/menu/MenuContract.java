@@ -14,7 +14,6 @@ import br.com.testedx.model.Sandwich;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public interface MenuContract {
 
     interface View extends BaseView<Presenter>{
@@ -26,6 +25,8 @@ public interface MenuContract {
         void dismissAlertMessage();
 
         void finishCustomizerItem(Sandwich s);
+
+        void updateMenuItem(Sandwich s);
 
     }
 

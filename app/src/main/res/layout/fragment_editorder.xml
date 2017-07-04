@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="@{() -> callback.onCancelListener()}"
+                android:onClick="@{() -> callback.onCancelListener(sandwich)}"
                 android:text="@string/cancel" />
 
             <Button
@@ -136,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="@{() -> callback.onFinishListener()}"
+                android:onClick="@{() -> callback.onFinishListener(sandwich)}"
                 android:text="@string/finalize" />
         </LinearLayout>
     </LinearLayout>

@@ -10,7 +10,6 @@ import br.com.testedx.Testedx;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class VolleyHelper {
 
     private static VolleyHelper mInstance;

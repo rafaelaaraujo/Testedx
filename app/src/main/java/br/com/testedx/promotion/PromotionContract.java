@@ -10,7 +10,6 @@ import br.com.testedx.promotion.model.Promotion;
  * Created by rafaela on 30/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class PromotionContract {
 
     interface View extends BaseView<PromotionContract.Presenter> {

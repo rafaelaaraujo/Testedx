@@ -25,7 +25,6 @@ import static br.com.testedx.util.RecyclerViewMatcher.nthChildOf;
 /**
  * Created by rafaela on 01/07/2017.
  */
-@SuppressWarnings("ALL")
 @RunWith(AndroidJUnit4.class)
 public class MenuFragmentTest {
 

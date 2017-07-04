@@ -20,7 +20,6 @@ import br.com.testedx.util.volley.VolleyHelper;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 class MainPresenter implements MainContract.Presenter {
 
     private MainContract.View mMainView;

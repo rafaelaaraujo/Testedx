@@ -97,7 +97,7 @@ public class Sandwich implements Parcelable {
         i.setQuantity(1);
         total += i.getPrice();
         ingredientsName += i.getName()+", ";
-        ingredientsObj.put(i.getId(),i);
+        ingredientsObj.put(i.getId(),Ingredient.getNewIngredient(i.getId(),i.getName(),i.getPrice(),i.getImage(),i.getQuantity()));
     }
 
     public double getTotalWithDiscounts() {
@@ -107,7 +107,6 @@ public class Sandwich implements Parcelable {
     public void setTotalWithDiscounts(double totalWithDiscounts) {
         this.totalWithDiscounts = totalWithDiscounts;
     }
-
 
     @Override
     public int describeContents() {

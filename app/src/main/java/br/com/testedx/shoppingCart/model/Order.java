@@ -6,7 +6,6 @@ import java.util.List;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 public class Order {
 
     private int id;

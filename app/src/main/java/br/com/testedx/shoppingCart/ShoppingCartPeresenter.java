@@ -30,7 +30,6 @@ import br.com.testedx.viewholder.ViewHolder;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
     private static final int NUN_PROMOTION_MEAT = 3;
@@ -81,6 +80,7 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
     /**
      * create string to show ingredits name and update price
      * based in ingredits and quantity of these ingredients
+     *
      * @param sandwich sandwich that will be updated
      */
     private Sandwich updateTotalAndQuantity(Sandwich sandwich) {
@@ -89,7 +89,7 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
         for (Map.Entry<Integer, Ingredient> entry : ingredientsList.entrySet()) {
             int occurrences = Collections.frequency(sandwich.getIngredients(), entry.getKey());
-            if (occurrences >  Constants.ZERO) {
+            if (occurrences > Constants.ZERO) {
                 Ingredient i = entry.getValue();
                 i.setQuantity(occurrences);
                 sandwich.getIngredientsObj().put(i.getId(), i);
@@ -103,7 +103,7 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
     private Sandwich addTotal(Sandwich sandwich) {
         PromotionEnum promotionEnum = PromotionEnum.getPromtionType(sandwich);
-        double totalWithDiscounts = applyDiscounts(promotionEnum, sandwich.getTotal());
+        double totalWithDiscounts = applyDiscounts(promotionEnum, sandwich);
 
         sandwich.setTotalWithDiscounts(totalWithDiscounts);
         sandwich.setPromotionEnum(promotionEnum);
@@ -111,33 +111,61 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
         return sandwich;
     }
 
-    private double applyDiscounts(PromotionEnum promotionEnum, double total) {
+    private double applyDiscounts(PromotionEnum promotionEnum, Sandwich s) {
         if (promotionEnum != null) {
+
+            double total = s.getTotal();
+
             switch (promotionEnum) {
                 case LIGHT:
-                    return total - (total * PROMOTION_LIGHT_PERCENT);
+                    total = getDiscountLight(s);
+                    break;
                 case CARNE:
-                    int qtdDiscounts = ingredientsList.get(PromotionEnum.HAMBURGUER_CARNE).getQuantity() / NUN_PROMOTION_MEAT;
-                    return (total - (ingredientsList.get(PromotionEnum.HAMBURGUER_CARNE).getPrice() * qtdDiscounts));
+                    total = getDiscountsMeat(s);
+                    break;
                 case QUEIJO:
-                    int qtd = ingredientsList.get(PromotionEnum.CHEESE).getQuantity() / NUN_PROMOTION_CHEESE;
-                    total = total - (ingredientsList.get(PromotionEnum.CHEESE).getPrice() * qtd);
+                    total = getDiscountCheese(s);
                     break;
             }
+
+            return total;
         }
-        return total;
+       return s.getTotal();
+    }
+
+    private double getDiscountCheese(Sandwich s) {
+        HashMap<Integer, Ingredient> ing = s.getIngredientsObj();
+        if (ing.containsKey(PromotionEnum.CHEESE)) {
+            int qtd = ing.get(PromotionEnum.CHEESE).getQuantity() / NUN_PROMOTION_CHEESE;
+            return s.getTotal() - (ing.get(PromotionEnum.CHEESE).getPrice() * qtd);
+        }
+        return Constants.ZERO;
+    }
+
+    private double getDiscountsMeat(Sandwich s) {
+        HashMap<Integer, Ingredient> ing = s.getIngredientsObj();
+        if (ing.containsKey(PromotionEnum.HAMBURGUER_CARNE)) {
+            int qtdDiscounts = ing.get(PromotionEnum.HAMBURGUER_CARNE).getQuantity() / NUN_PROMOTION_MEAT;
+            return (s.getTotal() - (ing.get(PromotionEnum.HAMBURGUER_CARNE).getPrice() * qtdDiscounts));
+        }
+        return Constants.ZERO;
+    }
+
+    private double getDiscountLight(Sandwich s) {
+        return s.getTotal() - (s.getTotal() * PROMOTION_LIGHT_PERCENT);
     }
 
     private Response.Listener<JSONArray> sucessLoadItem = new Response.Listener<JSONArray>() {
 
         @Override
         public void onResponse(JSONArray response) {
-            Type listType = new TypeToken<List<Order>>() {}.getType();
+            Type listType = new TypeToken<List<Order>>() {
+            }.getType();
             List<Order> list = new Gson().fromJson(response.toString(), listType);
             if (list.isEmpty()) {
                 mShoppingCart.showEmpityMessage();
             } else {
-                mShoppingCart.loadList(list, ingredientsList);
+                mShoppingCart.loadList(list);
             }
         }
     };

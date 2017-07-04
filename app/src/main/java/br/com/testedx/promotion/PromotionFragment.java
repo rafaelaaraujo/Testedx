@@ -18,7 +18,6 @@ import br.com.testedx.promotion.model.Promotion;
 /**
  * Created by rafaela on 28/06/2017.
  */
-@SuppressWarnings("ALL")
 public class PromotionFragment extends Fragment implements PromotionContract.View {
 
     private View view;

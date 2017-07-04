@@ -85,6 +85,13 @@ public class MenuFragment extends Fragment implements MenuContract.View, OnRecyc
     @Override
     public void finishCustomizerItem(Sandwich s) {
         sandwichPresenter.updateItem(s);
+        sandwichPresenter.addItemToCart(s);
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void updateMenuItem(Sandwich s) {
+        sandwichPresenter.updateItem(s);
         mAdapter.notifyDataSetChanged();
     }
 

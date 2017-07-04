@@ -21,7 +21,6 @@ import br.com.testedx.util.volley.VolleyHelper;
  * Created by rafaela on 30/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class PromotionPresenter implements PromotionContract.Presenter {
 
     private PromotionContract.View mPromotionView;

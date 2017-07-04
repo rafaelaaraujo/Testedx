@@ -15,7 +15,6 @@ import br.com.testedx.util.StringUtil;
  * Created by rafaela on 29/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class EditOrderPresenter implements EditOrderContract.Presenter {
 
     private static final int NUN_PROMOTION_MEAT = 3;
@@ -53,24 +52,44 @@ class EditOrderPresenter implements EditOrderContract.Presenter {
         if (promotionEnum != null) {
             switch (promotionEnum) {
                 case LIGHT:
-                    totalDiscounts = totalDiscounts - (totalDiscounts * PROMOTION_LIGHT_PERCENT);
+                    totalDiscounts = getDiscountLight(totalDiscounts);
+                    break;
                 case CARNE:
-                    int qtdDiscounts = ingredientsList.get(PromotionEnum.HAMBURGUER_CARNE).getQuantity() / NUN_PROMOTION_MEAT;
-                    totalDiscounts = (totalDiscounts - (ingredientsList.get(PromotionEnum.HAMBURGUER_CARNE).getPrice() * qtdDiscounts));
+                    totalDiscounts = getDiscountsMeat(totalDiscounts);
+                    break;
                 case QUEIJO:
-                    int qtd = ingredientsList.get(PromotionEnum.CHEESE).getQuantity() / NUN_PROMOTION_CHEESE;
-                    totalDiscounts = totalDiscounts - (ingredientsList.get(PromotionEnum.CHEESE).getPrice() * qtd);
+                    totalDiscounts = getDiscountCheese(totalDiscounts);
                     break;
             }
         }
         mOrderView.updateDiscounts(StringUtil.formatNumberToCurrent(totalDiscounts), promotionEnum != PromotionEnum.NONE ? promotionEnum.toString() : null);
         sandwich.setTotalWithDiscounts(totalDiscounts);
-        sandwich.setPromotionEnum(PromotionEnum.NONE);
+        sandwich.setPromotionEnum(promotionEnum);
     }
 
-    @Override
-    public void finishOrder(MainActivity activity) {
-        activity.finishEditOrder(sandwich);
+    private double getDiscountCheese(double totalDiscounts) {
+        HashMap<Integer,Ingredient> ing = sandwich.getIngredientsObj();
+        if(ing.containsKey(PromotionEnum.CHEESE)) {
+            int qtd = ing.get(PromotionEnum.CHEESE).getQuantity() / NUN_PROMOTION_CHEESE;
+            totalDiscounts = totalDiscounts - (ing.get(PromotionEnum.CHEESE).getPrice() * qtd);
+            return totalDiscounts;
+        }
+        return Constants.ZERO;
+    }
+
+    private double getDiscountsMeat(double totalDiscounts) {
+        HashMap<Integer,Ingredient> ing = sandwich.getIngredientsObj();
+        if(ing.containsKey(PromotionEnum.HAMBURGUER_CARNE)) {
+            int qtdDiscounts = ing.get(PromotionEnum.HAMBURGUER_CARNE).getQuantity() / NUN_PROMOTION_MEAT;
+            totalDiscounts = (totalDiscounts - (ing.get(PromotionEnum.HAMBURGUER_CARNE).getPrice() * qtdDiscounts));
+            return totalDiscounts;
+        }
+        return Constants.ZERO;
+    }
+
+    private double getDiscountLight(double totalDiscounts) {
+        totalDiscounts = totalDiscounts - (totalDiscounts * PROMOTION_LIGHT_PERCENT);
+        return totalDiscounts;
     }
 
     @Override
@@ -92,16 +111,17 @@ class EditOrderPresenter implements EditOrderContract.Presenter {
             total -= item.getPrice();
             removeSandwichIngredients(item.getId(), value);
         }
-        item.setQuantity(value);
+        if(sandwich.getIngredientsObj().containsKey(item.getId())){
+            sandwich.getIngredientsObj().get(item.getId()).setQuantity(value < Constants.ZERO ? Constants.ZERO : value);
+        }
         addTotal(total);
         updateIngredientsName();
     }
 
     private void addTotal(double total) {
-        applyDiscounts();
         sandwich.setTotal(total);
         mOrderView.updateTotal(StringUtil.formatNumberToCurrent(total));
-
+        applyDiscounts();
     }
 
     private void addSandwichIngredients(Ingredient item) {

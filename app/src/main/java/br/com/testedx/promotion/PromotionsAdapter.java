@@ -16,7 +16,6 @@ import br.com.testedx.viewholder.ViewHolder;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class PromotionsAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private final List<Promotion> mValues;

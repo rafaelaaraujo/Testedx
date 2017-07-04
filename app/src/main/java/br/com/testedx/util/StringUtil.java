@@ -9,7 +9,6 @@ import java.util.Locale;
  * Created by rafaela on 29/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class StringUtil {
 
     public static String formatNumberToCurrent(double f) {

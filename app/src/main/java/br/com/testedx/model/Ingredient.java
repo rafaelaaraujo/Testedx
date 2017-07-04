@@ -92,4 +92,14 @@ public class Ingredient implements Parcelable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    static Ingredient getNewIngredient(int id, String name, double price, String image, int quantity){
+        Ingredient i = new Ingredient();
+        i.setId(id);
+        i.setName(name);
+        i.setPrice(price);
+        i.setImage(image);
+        i.setQuantity(quantity);
+        return i;
+    }
 }

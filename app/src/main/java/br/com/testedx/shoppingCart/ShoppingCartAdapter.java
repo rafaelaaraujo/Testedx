@@ -23,7 +23,6 @@ import br.com.testedx.viewholder.ViewHolder;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class ShoppingCartAdapter extends RecyclerView.Adapter<ViewHolder> implements GetSandwichListener {
 
     private List<Order> sandwichList;

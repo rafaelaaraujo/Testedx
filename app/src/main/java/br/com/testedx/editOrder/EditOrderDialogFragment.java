@@ -35,7 +35,6 @@ import br.com.testedx.util.StringUtil;
  * Created by rafaela on 29/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class EditOrderDialogFragment extends DialogFragment implements EditOrderContract.View, OnClickIngredientListener {
 
     private EditOrderContract.Presenter mOrderPresenter;
@@ -123,13 +122,14 @@ public class EditOrderDialogFragment extends DialogFragment implements EditOrder
     }
 
     @Override
-    public void onCancelListener() {
+    public void onCancelListener(Sandwich s) {
+        ((MainActivity) getActivity()).updateItemMenu(s);
         dismissAllowingStateLoss();
     }
 
     @Override
-    public void onFinishListener() {
-        mOrderPresenter.finishOrder((MainActivity) getActivity());
+    public void onFinishListener(Sandwich s) {
+        ((MainActivity) getActivity()).finishEditOrder(s);
         dismissAllowingStateLoss();
     }
 

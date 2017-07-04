@@ -8,7 +8,6 @@ import br.com.testedx.R;
  * Created by rafaela.araujo on 03/07/2017.
  */
 
-@SuppressWarnings("ALL")
 public class ImageUtil {
 
     public static DisplayImageOptions getSandwichImageOptions() {

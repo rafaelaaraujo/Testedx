@@ -14,12 +14,11 @@ import br.com.testedx.viewholder.ViewHolder;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 class ShoppingCartContract {
 
     interface View extends BaseView<ShoppingCartContract.Presenter> {
 
-        void loadList(List<Order> sandwiches, HashMap<Integer,Ingredient> ingredientHashMap);
+        void loadList(List<Order> sandwiches);
 
         void showEmpityMessage();
     }

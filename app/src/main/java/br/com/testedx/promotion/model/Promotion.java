@@ -4,7 +4,6 @@ package br.com.testedx.promotion.model;
  * Created by rafaela on 30/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class Promotion {
 
     private int id;

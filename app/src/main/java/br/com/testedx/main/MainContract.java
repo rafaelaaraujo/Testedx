@@ -10,7 +10,6 @@ import br.com.testedx.model.Ingredient;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 class MainContract {
     interface View extends BaseView<MainContract.Presenter> {
 

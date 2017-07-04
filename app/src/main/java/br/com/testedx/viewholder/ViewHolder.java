@@ -9,7 +9,6 @@ import android.view.View;
  * Created by rafaela on 01/07/2017.
  */
 
-@SuppressWarnings("ALL")
 public class ViewHolder extends RecyclerView.ViewHolder{
 
     private ViewDataBinding binding;

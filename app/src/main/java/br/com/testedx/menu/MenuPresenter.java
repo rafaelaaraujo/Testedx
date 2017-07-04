@@ -31,7 +31,6 @@ import br.com.testedx.util.volley.VolleyHelper;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 class MenuPresenter implements MenuContract.Presenter {
 
     private static final String ITEM_EDITED_IDENTIFIER = " - do seu jeito";
@@ -51,6 +50,7 @@ class MenuPresenter implements MenuContract.Presenter {
         args.putParcelable(Constants.SANDWICH, sadwich);
         args.putSerializable(Constants.INGREDIENTS, ingredientsList);
         editOrderDialogFragment.setArguments(args);
+        editOrderDialogFragment.setCancelable(false);
         editOrderDialogFragment.show(fm, "Order detail");
     }
 
@@ -77,7 +77,6 @@ class MenuPresenter implements MenuContract.Presenter {
         upgrateName(s);
         updateIngredientsName(s);
         sandwiches.set(s.getId() - 1, s);
-        addItemToCart(s);
     }
 
     private void upgrateName(Sandwich s) {
@@ -109,7 +108,6 @@ class MenuPresenter implements MenuContract.Presenter {
         }
         param.put("extras", list.toString());
         return param;
-
     }
 
     private Response.Listener<JSONObject> sucessAddCart = new Response.Listener<JSONObject>() {
@@ -127,7 +125,6 @@ class MenuPresenter implements MenuContract.Presenter {
         public void onErrorResponse(VolleyError error) {
             mSandwichView.dismissLoading();
             mSandwichView.showAlertMessage(R.string.error_add_cart);
-
         }
     };
 
@@ -169,5 +166,4 @@ class MenuPresenter implements MenuContract.Presenter {
     public void start() {
         loadMenu();
     }
-
 }

@@ -19,7 +19,6 @@ import br.com.testedx.util.Constants;
 /**
  * Created by rafaela on 28/06/2017.
  */
-@SuppressWarnings("ALL")
 public class ShoppingCartActivity extends AppCompatActivity implements ShoppingCartContract.View {
 
     private ShoppingCartContract.Presenter presenter;
@@ -68,7 +67,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements ShoppingC
     }
 
     @Override
-    public void loadList(List<Order> sandwiches,  HashMap<Integer,Ingredient> ingredientHashMap) {
+    public void loadList(List<Order> sandwiches) {
         mAdapter = new ShoppingCartAdapter(sandwiches,presenter);
         mRecyclerView.setAdapter(mAdapter);
     }

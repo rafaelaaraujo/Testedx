@@ -94,9 +94,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         transaction.commit();
     }
 
-
     public void finishEditOrder(Sandwich s) {
         menuFragment.finishCustomizerItem(s);
+    }
+
+    public void updateItemMenu(Sandwich s) {
+        menuFragment.updateMenuItem(s);
     }
 
     @Override

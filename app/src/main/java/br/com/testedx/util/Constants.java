@@ -4,7 +4,6 @@ package br.com.testedx.util;
  * Created by rafaela on 02/07/2017.
  */
 
-@SuppressWarnings("ALL")
 public class Constants {
 
     public static final String URL_BASE = "http://192.168.0.7:8080/api";

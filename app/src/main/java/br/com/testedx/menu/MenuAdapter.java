@@ -22,7 +22,6 @@ import br.com.testedx.viewholder.ViewHolder;
  * Created by rafaela on 28/06/2017.
  */
 
-@SuppressWarnings("ALL")
 public class MenuAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private List<Sandwich> sandwichList;

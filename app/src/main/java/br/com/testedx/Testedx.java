@@ -9,7 +9,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 /**
  * Created by rafaela on 28/06/2017.
  */
-@SuppressWarnings("ALL")
 public class Testedx extends Application {
 
     private static Context context;
