@@ -6,7 +6,7 @@ package br.com.testedx.util;
 
 public class Constants {
 
-    public static final String URL_BASE = "http://192.168.6.149:8080/api";
+    public static final String URL_BASE = "http://192.168.0.7:8080/api";
     public static final int ZERO = 0;
     public static final int ONE = 1;
     public static final String COMMA_STRING = ", ";

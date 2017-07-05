@@ -26,7 +26,7 @@ public class StringUtil {
     }
 
     public static String getDateFormated(long date){
-        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy",Locale.US);
+        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy 'as' HH:mm",Locale.US);
         return df2.format(date);
     }
 

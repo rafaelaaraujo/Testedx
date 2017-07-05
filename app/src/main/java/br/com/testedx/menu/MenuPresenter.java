@@ -86,10 +86,14 @@ class MenuPresenter implements MenuContract.Presenter {
 
     @Override
     public void addItemToCart(Sandwich s) {
-        mSandwichView.showLoading(R.string.add_cart);
-        String url = Constants.URL_BASE + "/pedido/" + s.getId();
-        CustomRequest request = new CustomRequest(Request.Method.PUT, url, getParamAddCart(s), sucessAddCart, errorAddCart);
-        VolleyHelper.getInstance().addToRequestQueue(request);
+        if(s.getTotal() != Constants.ZERO) {
+            mSandwichView.showLoading(R.string.add_cart);
+            String url = Constants.URL_BASE + "/pedido/" + s.getId();
+            CustomRequest request = new CustomRequest(Request.Method.PUT, url, getParamAddCart(s), sucessAddCart, errorAddCart);
+            VolleyHelper.getInstance().addToRequestQueue(request);
+        }else{
+            mSandwichView.showAlertMessage(R.string.add_cart_error);
+        }
     }
 
     /**

@@ -28,4 +28,5 @@
     <string name="plus">+</string>
     <string name="card_pio">menu</string>
     <string name="promotions">promotions</string>
+    <string name="add_cart_error">Você precisa adicionar ao menos um item no pedido</string>
 </resources>

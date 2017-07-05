@@ -1,4 +1,4 @@
-#Mon Jul 03 22:59:34 BRT 2017
+#Tue Jul 04 21:28:59 BRT 2017
 file.2=C\:\\Users\\rafaela\\Documents\\Testedx\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_ac607f7b0ffcf48beb08e1f3ab7afa0f33b10401\\classes.dex
 base.2=C\:\\Users\\rafaela\\Documents\\Testedx\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_ac607f7b0ffcf48beb08e1f3ab7afa0f33b10401
 file.1=C\:\\Users\\rafaela\\Documents\\Testedx\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gson-2.7_66c4e1c2334ebf3c0e09b6abb184250ac2585ef6\\classes.dex
