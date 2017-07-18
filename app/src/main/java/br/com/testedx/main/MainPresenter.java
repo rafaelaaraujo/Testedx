@@ -1,20 +1,13 @@
 package br.com.testedx.main;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.util.HashMap;
+import java.util.List;
 
 import br.com.testedx.R;
 import br.com.testedx.model.Ingredient;
-import br.com.testedx.util.Constants;
-import br.com.testedx.util.volley.VolleyHelper;
+import br.com.testedx.util.retrofit.RetrofitManager;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * Created by rafaela on 01/07/2017.
@@ -37,9 +30,27 @@ class MainPresenter implements MainContract.Presenter {
     @Override
     public void loadIngredients() {
         mMainView.showLoading(R.string.waiting);
-        String url = Constants.URL_BASE + "/ingrediente/";
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, sucessLoadIngredients, errorLoadIngredients);
-        VolleyHelper.getInstance().addToRequestQueue(request);
+
+        Call<List<Ingredient>> call = RetrofitManager.getInstance().getClient().getIngredients();
+
+        call.enqueue(new Callback<List<Ingredient>>() {
+
+            @Override
+            public void onResponse(Call<List<Ingredient>> call, retrofit2.Response<List<Ingredient>> response) {
+
+                for (Ingredient ingredient : response.body()) {
+                    ingredientsList.put(ingredient.getId(),ingredient);
+                }
+                mMainView.dismissLoading();
+                mMainView.initBottomNavigation();
+            }
+
+            @Override
+            public void onFailure(Call<List<Ingredient>> call, Throwable t) {
+                mMainView.dismissLoading();
+                mMainView.showAlertMessage(R.string.erro_search_menu);
+            }
+        });
     }
 
     @Override
@@ -52,29 +63,4 @@ class MainPresenter implements MainContract.Presenter {
         mMainView.showFragmentMenu(ingredientsList);
     }
 
-    private Response.Listener<JSONArray> sucessLoadIngredients = new Response.Listener<JSONArray>() {
-
-        @Override
-        public void onResponse(JSONArray response) {
-            try {
-                for (int i = 0; i < response.length(); ++i) {
-                    Ingredient ingredient = new Gson().fromJson(response.get(i).toString(), Ingredient.class);
-                    ingredientsList.put(ingredient.getId(), ingredient);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            mMainView.dismissLoading();
-            mMainView.initBottomNavigation();
-        }
-    };
-
-    private Response.ErrorListener errorLoadIngredients = new Response.ErrorListener() {
-
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            mMainView.dismissLoading();
-            mMainView.showAlertMessage(R.string.erro_search_menu);
-        }
-    };
 }

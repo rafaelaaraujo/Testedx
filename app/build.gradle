@@ -1,6 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
@@ -11,11 +18,18 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
+        def IP = InetAddress.localHost.hostAddress
+        def IPS = "\"" + IP + "\""
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            buildConfigField "String", "IP", IPS
+            buildConfigField "Integer", "PORT", "8080"
         }
     }
 
@@ -38,12 +52,26 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support:support-vector-drawable:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+    compile("com.github.tomakehurst:wiremock:2.6.0") {
+        //Allows us to use the Android version of Apache httpclient instead
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
 
+        //Resolves the Duplicate Class Exception
+        //duplicate entry: org/objectweb/asm/AnnotationVisitor.class
+        exclude group: 'asm', module: 'asm'
+
+        //Fixes Warning conflict with Android's version of org.json
+        //org.json:json:20090211 is ignored for debugAndroidTest as it may be conflicting with the internal version provided by Android.
+        exclude group: 'org.json', module: 'json'
+    }
+//Android compatible version of Apache httpclient.
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2') {

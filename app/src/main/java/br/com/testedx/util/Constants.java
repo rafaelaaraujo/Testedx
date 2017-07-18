@@ -1,12 +1,14 @@
 package br.com.testedx.util;
 
+import br.com.testedx.BuildConfig;
+
 /**
  * Created by rafaela on 02/07/2017.
  */
 
 public class Constants {
 
-    public static final String URL_BASE = "http://192.168.0.7:8080/api";
+    public static final String URL_BASE = "http://"+BuildConfig.IP+":"+BuildConfig.PORT+"/";
     public static final int ZERO = 0;
     public static final int ONE = 1;
     public static final String COMMA_STRING = ", ";

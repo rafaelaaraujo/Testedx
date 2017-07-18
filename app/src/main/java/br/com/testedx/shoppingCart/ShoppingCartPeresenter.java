@@ -1,17 +1,5 @@
 package br.com.testedx.shoppingCart;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -23,8 +11,10 @@ import br.com.testedx.model.Sandwich;
 import br.com.testedx.shoppingCart.listener.GetSandwichListener;
 import br.com.testedx.shoppingCart.model.Order;
 import br.com.testedx.util.Constants;
-import br.com.testedx.util.volley.VolleyHelper;
+import br.com.testedx.util.retrofit.RetrofitManager;
 import br.com.testedx.viewholder.ViewHolder;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * Created by rafaela on 01/07/2017.
@@ -50,31 +40,52 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
     @Override
     public void loadCartItems() {
-        String url = Constants.URL_BASE + "/pedido/";
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, sucessLoadItem, errorLoadItem);
-        VolleyHelper.getInstance().addToRequestQueue(request);
+        Call<List<Order>> call = RetrofitManager.getInstance().getClient().getCartItens();
+
+        call.enqueue(new Callback<List<Order>>() {
+
+            @Override
+            public void onResponse(Call<List<Order>> call, retrofit2.Response<List<Order>> response) {
+                if(response.isSuccessful()) {
+                    List<Order> list = response.body();
+                    if (list== null || list.isEmpty()) {
+                        mShoppingCart.showEmpityMessage();
+                    } else {
+                        mShoppingCart.loadList(list);
+                    }
+                }
+                }
+
+
+            @Override
+            public void onFailure(Call<List<Order>> call, Throwable t) {
+                mShoppingCart.showEmpityMessage();
+            }
+        });
     }
 
     @Override
     public void loadSandwichItem(final Order order, final ViewHolder holder, final GetSandwichListener listener) {
-        String url = Constants.URL_BASE + "/lanche/" + order.getId_sandwich();
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                Sandwich s = new Gson().fromJson(response.toString(), Sandwich.class);
-                if (!order.getExtras().isEmpty())
-                    s.setIngredients(order.getExtras());
+        Call<Sandwich> call = RetrofitManager.getInstance().getClient().getItem(String.valueOf(order.getId_sandwich()));
 
-                listener.onSucessGetSandwich(updateTotalAndQuantity(s), holder);
-            }
-        }, new Response.ErrorListener() {
+        call.enqueue(new Callback<Sandwich>() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponse(Call<Sandwich> call, retrofit2.Response<Sandwich> response) {
+                if(response.isSuccessful()) {
+                    Sandwich s = response.body();
+                    if (s != null && !order.getExtras().isEmpty())
+                        s.setIngredients(order.getExtras());
+
+                    listener.onSucessGetSandwich(updateTotalAndQuantity(s), holder);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Sandwich> call, Throwable t) {
                 listener.onErrorGetSandwich();
             }
         });
-        VolleyHelper.getInstance().addToRequestQueue(request);
-
     }
 
     /**
@@ -154,26 +165,4 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
     private double getDiscountLight(Sandwich s) {
         return s.getTotal() - (s.getTotal() * PROMOTION_LIGHT_PERCENT);
     }
-
-    private Response.Listener<JSONArray> sucessLoadItem = new Response.Listener<JSONArray>() {
-
-        @Override
-        public void onResponse(JSONArray response) {
-            Type listType = new TypeToken<List<Order>>() {
-            }.getType();
-            List<Order> list = new Gson().fromJson(response.toString(), listType);
-            if (list.isEmpty()) {
-                mShoppingCart.showEmpityMessage();
-            } else {
-                mShoppingCart.loadList(list);
-            }
-        }
-    };
-
-    private Response.ErrorListener errorLoadItem = new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            mShoppingCart.showEmpityMessage();
-        }
-    };
 }

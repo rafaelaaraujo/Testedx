@@ -4,14 +4,6 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -24,8 +16,9 @@ import br.com.testedx.editOrder.EditOrderDialogFragment;
 import br.com.testedx.model.Ingredient;
 import br.com.testedx.model.Sandwich;
 import br.com.testedx.util.Constants;
-import br.com.testedx.util.volley.CustomRequest;
-import br.com.testedx.util.volley.VolleyHelper;
+import br.com.testedx.util.retrofit.RetrofitManager;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * Created by rafaela on 28/06/2017.
@@ -57,9 +50,28 @@ class MenuPresenter implements MenuContract.Presenter {
     @Override
     public void loadMenu() {
         mSandwichView.showLoading(R.string.search_menu);
-        String url = Constants.URL_BASE + "/lanche/";
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, sucessLoadSandwiches, errorLoadSandwichs);
-        VolleyHelper.getInstance().addToRequestQueue(request);
+        Call<List<Sandwich>> call = RetrofitManager.getInstance().getClient().getSandwichs();
+
+        call.enqueue(new Callback<List<Sandwich>>() {
+
+            @Override
+            public void onResponse(Call<List<Sandwich>> call, retrofit2.Response<List<Sandwich>> response) {
+                mSandwichView.dismissLoading();
+
+                for (Sandwich sandwich : response.body()) {
+                    addListIngredientsAndTotal(sandwich);
+                }
+
+                sandwiches.addAll(response.body());
+                mSandwichView.showSandwichs(sandwiches, ingredientsList);
+            }
+
+            @Override
+            public void onFailure(Call<List<Sandwich>> call, Throwable t) {
+                mSandwichView.dismissLoading();
+                mSandwichView.showAlertMessage(R.string.erro_search_menu);
+            }
+        });
     }
 
 
@@ -88,9 +100,28 @@ class MenuPresenter implements MenuContract.Presenter {
     public void addItemToCart(Sandwich s) {
         if(s.getTotal() != Constants.ZERO) {
             mSandwichView.showLoading(R.string.add_cart);
-            String url = Constants.URL_BASE + "/pedido/" + s.getId();
-            CustomRequest request = new CustomRequest(Request.Method.PUT, url, getParamAddCart(s), sucessAddCart, errorAddCart);
-            VolleyHelper.getInstance().addToRequestQueue(request);
+
+            Call<JSONObject> call = RetrofitManager.getInstance().getClient().addItemToCart(String.valueOf(s.getId()),getParamAddCart(s));
+
+            call.enqueue(new Callback<JSONObject>() {
+
+                @Override
+                public void onResponse(Call<JSONObject> call, retrofit2.Response<JSONObject> response) {
+                    if(response.isSuccessful()) {
+                        mSandwichView.dismissLoading();
+                        mSandwichView.showAlertMessage(R.string.sucess_add_cart);
+                    }else{
+                        mSandwichView.dismissLoading();
+                        mSandwichView.showAlertMessage(R.string.error_add_cart);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<JSONObject> call, Throwable t) {
+                    mSandwichView.dismissLoading();
+                    mSandwichView.showAlertMessage(R.string.error_add_cart);
+                }
+            });
         }else{
             mSandwichView.showAlertMessage(R.string.add_cart_error);
         }
@@ -114,42 +145,6 @@ class MenuPresenter implements MenuContract.Presenter {
         return param;
     }
 
-    private Response.Listener<JSONObject> sucessAddCart = new Response.Listener<JSONObject>() {
-
-        @Override
-        public void onResponse(JSONObject response) {
-            mSandwichView.dismissLoading();
-            mSandwichView.showAlertMessage(R.string.sucess_add_cart);
-        }
-    };
-
-    private Response.ErrorListener errorAddCart = new Response.ErrorListener() {
-
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            mSandwichView.dismissLoading();
-            mSandwichView.showAlertMessage(R.string.error_add_cart);
-        }
-    };
-
-    private Response.Listener<JSONArray> sucessLoadSandwiches = new Response.Listener<JSONArray>() {
-
-        @Override
-        public void onResponse(JSONArray response) {
-            mSandwichView.dismissLoading();
-            try {
-                for (int i = 0; i < response.length(); ++i) {
-                    Sandwich s = new Gson().fromJson(response.get(i).toString(), Sandwich.class);
-                    addListIngredientsAndTotal(s);
-                    sandwiches.add(s);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            mSandwichView.showSandwichs(sandwiches, ingredientsList);
-        }
-    };
-
     private void addListIngredientsAndTotal(Sandwich sandwich) {
         for (int ingredient : sandwich.getIngredients()) {
             Ingredient i = ingredientsList.get(ingredient);
@@ -160,15 +155,6 @@ class MenuPresenter implements MenuContract.Presenter {
             }
         }
     }
-
-    private Response.ErrorListener errorLoadSandwichs = new Response.ErrorListener() {
-
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            mSandwichView.dismissLoading();
-            mSandwichView.showAlertMessage(R.string.erro_search_menu);
-        }
-    };
 
     @Override
     public void start() {
