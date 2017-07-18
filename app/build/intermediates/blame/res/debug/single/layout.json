@@ -4,16 +4,16 @@
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_text_input_password_icon.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_promotions_list.xml",
         "source": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\src\\main\\res\\layout\\fragment_promotions_list.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\notification_template_part_time.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\shopping_cart_item.xml",
@@ -48,12 +48,12 @@
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
-    },
-    {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
@@ -224,12 +224,12 @@
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\fe61d8e8c1672c72108d918d297e05fd76547d83\\output\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
