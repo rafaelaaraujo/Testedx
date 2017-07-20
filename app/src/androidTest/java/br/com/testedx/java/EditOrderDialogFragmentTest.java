@@ -48,7 +48,7 @@ public class EditOrderDialogFragmentTest {
         // intent stuff
         grouchyIntent.putExtra("EXTRA_IS_GROUCHY", true);
         mActivityTestRule.launchActivity(grouchyIntent);
-        SystemClock.sleep(5000);
+        SystemClock.sleep(1000);
 
         onView(ViewMatchers.withId(R.id.recicle_menu)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(0, RecyclerViewMatcher.clickChildViewWithId(R.id.btn_customize)));
