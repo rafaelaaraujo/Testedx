@@ -21,16 +21,11 @@ android {
         multiDexEnabled true
     }
     buildTypes {
-        def IP = InetAddress.localHost.hostAddress
-        def IPS = "\"" + IP + "\""
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
-        debug {
-            buildConfigField "String", "IP", IPS
-            buildConfigField "Integer", "PORT", "8080"
-        }
+
     }
 
     dataBinding {

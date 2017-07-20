@@ -8,7 +8,7 @@ import br.com.testedx.BuildConfig;
 
 public class Constants {
 
-    public static String URL_BASE = "http://"+BuildConfig.IP+":"+BuildConfig.PORT+"/";
+    public static String URL_BASE = "http://192.168.0.7:8080/";
     public static final int ZERO = 0;
     public static final int ONE = 1;
     public static final String COMMA_STRING = ", ";
