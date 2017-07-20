@@ -37,7 +37,6 @@ class MainPresenter implements MainContract.Presenter {
 
             @Override
             public void onResponse(Call<List<Ingredient>> call, retrofit2.Response<List<Ingredient>> response) {
-
                 for (Ingredient ingredient : response.body()) {
                     ingredientsList.put(ingredient.getId(),ingredient);
                 }

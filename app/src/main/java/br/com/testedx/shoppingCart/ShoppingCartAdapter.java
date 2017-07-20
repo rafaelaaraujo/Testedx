@@ -56,10 +56,8 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ViewHolder> implem
         holder.getBinding().setVariable(BR.s, s);
     }
 
-
     @Override
-    public void onErrorGetSandwich() {
-    }
+    public void onErrorGetSandwich() {}
 
     @BindingAdapter("addImage")
     public static void addImage(ImageView v, String image) {

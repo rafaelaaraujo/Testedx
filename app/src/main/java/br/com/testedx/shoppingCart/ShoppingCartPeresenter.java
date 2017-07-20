@@ -69,7 +69,6 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
         Call<Sandwich> call = RetrofitManager.getInstance().getClient().getItem(String.valueOf(order.getId_sandwich()));
 
         call.enqueue(new Callback<Sandwich>() {
-
             @Override
             public void onResponse(Call<Sandwich> call, retrofit2.Response<Sandwich> response) {
                 if(response.isSuccessful()) {

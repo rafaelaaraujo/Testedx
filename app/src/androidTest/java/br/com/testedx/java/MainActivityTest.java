@@ -42,7 +42,7 @@ public class MainActivityTest {
     public void setup() throws Exception {
         mockWebServer.start();
         Constants.URL_BASE = mockWebServer.getUrl("/").toString();
-        mockWebServer.setDispatcher(dispatcher);
+        mockWebServer.setDispatcher(RestServiceTestHelper.dispatcher);
 
         Intent grouchyIntent = new Intent();
         // intent stuff
@@ -67,28 +67,4 @@ public class MainActivityTest {
         onView(withId(R.id.cart)).perform(click());
         onView(withId(R.id.shopping_cart)).check(matches(isDisplayed()));
     }
-
-    final Dispatcher dispatcher = new Dispatcher() {
-
-        @Override
-        public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
-            try {
-                switch (request.getPath()) {
-                    case "/api/ingrediente/":
-
-                        return new MockResponse().setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "ingredients_200_ok_response.json")).setResponseCode(200);
-
-                    case "/api/lanche/":
-                        return new MockResponse().setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "sandwich_200_ok_response.json")).setResponseCode(200);
-
-                    case "/v1/profile/info":
-                        return new MockResponse().setResponseCode(200).setBody("{\\\"info\\\":{\\\"name\":\"Lucas Albuquerque\",\"age\":\"21\",\"gender\":\"male\"}}");
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return new MockResponse().setResponseCode(404);
-        }
-    };
 }

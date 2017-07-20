@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigation.xml",
+        "source": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\src\\main\\res\\menu\\navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigation.xml",
         "source": "E:\\repositorios\\Testedx\\app\\src\\main\\res\\menu\\navigation.xml"
     },

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Light",
+    "description": "Se o lanche tem alface e não tem bacon, ganha 10% de desconto."
+  },
+  {
+    "id": 2,
+    "name": "Muita carne",
+    "description": "A cada 3 porções de carne só paga 2. Se o lanche tiver 6 porções, pagará 4. Assim por diante"
+  },
+  {
+    "id": 3,
+    "name": "Muito queijo",
+    "description": "A cada 3 porções de queijo só paga 2. Se o lanche tiver 6 porções, pagará 4. Assim por diante"
+  }
+]
