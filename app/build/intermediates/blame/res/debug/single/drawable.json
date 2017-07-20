@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
@@ -20,12 +20,12 @@
         "source": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\src\\main\\res\\drawable\\sandwich.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_ratingbar_material.xml"
-    },
-    {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
@@ -56,16 +56,16 @@
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_restaurant_menu.xml",
         "source": "E:\\repositorios\\Testedx\\app\\src\\main\\res\\drawable\\ic_restaurant_menu.xml"
     },
     {
-        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_notification.xml",
@@ -88,16 +88,16 @@
         "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\notification_tile_bg.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\f5c6cef32d64e810aaeeca9b4e70f2589e7a1162\\output\\res\\drawable\\design_password_eye.xml"
     },
     {
-        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",

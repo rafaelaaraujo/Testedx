@@ -12,16 +12,16 @@
         "source": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\src\\main\\res\\layout\\shopping_cart_item.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ingredients_item.xml",
+        "source": "E:\\repositorios\\Testedx\\app\\src\\main\\res\\layout\\ingredients_item.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\f5c6cef32d64e810aaeeca9b4e70f2589e7a1162\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ingredients_item.xml",
-        "source": "E:\\repositorios\\Testedx\\app\\src\\main\\res\\layout\\ingredients_item.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shopping_cart.xml",
