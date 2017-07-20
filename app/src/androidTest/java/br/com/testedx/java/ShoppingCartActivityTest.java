@@ -50,11 +50,7 @@
 //        grouchyIntent.putExtra("EXTRA_IS_GROUCHY", true);
 //        mActivityTestRule.launchActivity(grouchyIntent);
 //
-//        onView(ViewMatchers.withId(R.id.recicle_menu)).perform(
-//                RecyclerViewActions.actionOnItemAtPosition(0, RecyclerViewMatcher.clickChildViewWithId(R.id.btn_add_cart)));
-//        SystemClock.sleep(1000);
-//        onView(withText("OK")).perform(click());
-//        onView(withId(R.id.cart)).perform(click());
+//       onView(withId(R.id.cart)).perform(click());
 //    }
 //
 //

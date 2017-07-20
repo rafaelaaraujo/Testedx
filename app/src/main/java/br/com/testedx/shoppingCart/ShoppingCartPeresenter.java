@@ -46,16 +46,15 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
             @Override
             public void onResponse(Call<List<Order>> call, retrofit2.Response<List<Order>> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     List<Order> list = response.body();
-                    if (list== null || list.isEmpty()) {
+                    if (list == null || list.isEmpty()) {
                         mShoppingCart.showEmpityMessage();
                     } else {
                         mShoppingCart.loadList(list);
                     }
                 }
-                }
-
+            }
 
             @Override
             public void onFailure(Call<List<Order>> call, Throwable t) {
@@ -71,7 +70,7 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
         call.enqueue(new Callback<Sandwich>() {
             @Override
             public void onResponse(Call<Sandwich> call, retrofit2.Response<Sandwich> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     Sandwich s = response.body();
                     if (s != null && !order.getExtras().isEmpty())
                         s.setIngredients(order.getExtras());
@@ -140,7 +139,7 @@ class ShoppingCartPeresenter implements ShoppingCartContract.Presenter {
 
             return total;
         }
-       return s.getTotal();
+        return s.getTotal();
     }
 
     private double getDiscountCheese(Sandwich s) {

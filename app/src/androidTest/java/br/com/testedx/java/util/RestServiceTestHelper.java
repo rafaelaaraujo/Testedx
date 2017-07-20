@@ -43,17 +43,10 @@ public class RestServiceTestHelper {
                 switch (request.getPath()) {
                     case "/api/ingrediente/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "ingredients_200_ok_response.json"));
-
-                    case "/api/lanche/1":
+                    case "/api/lanche/{id}/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "item_200_ok_response.json"));
-
                     case "/api/pedido/":
-//                        if (request.getMethod() == "GET") {
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "cart_200_ok_response.json"));
-//                        } else if (request.getMethod() == "PUT") {
-//                            return new MockResponse().setResponseCode(200);
-//                        }
-
                     case "/api/lanche/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "sandwich_200_ok_response.json"));
                 }
