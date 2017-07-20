@@ -1,6 +1,7 @@
-package br.com.testedx;
+package br.com.testedx.java;
 
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -8,8 +9,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import br.com.testedx.R;
 import br.com.testedx.main.MainActivity;
-import br.com.testedx.util.RecyclerViewMatcher;
+import br.com.testedx.java.util.RecyclerViewMatcher;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -20,7 +22,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static br.com.testedx.util.RecyclerViewMatcher.nthChildOf;
+import static br.com.testedx.java.util.RecyclerViewMatcher.nthChildOf;
 
 /**
  * Created by rafaela on 01/07/2017.
@@ -33,7 +35,7 @@ public class MenuFragmentTest {
 
     @Test
     public void checkScrooll_scrollAtPosition(){
-        onView(withId(R.id.recicle_menu)).perform(scrollToPosition(3));
+        onView(ViewMatchers.withId(R.id.recicle_menu)).perform(scrollToPosition(3));
         onView(withId(R.id.recicle_menu)).perform(actionOnItemAtPosition(3, click()));
     }
 

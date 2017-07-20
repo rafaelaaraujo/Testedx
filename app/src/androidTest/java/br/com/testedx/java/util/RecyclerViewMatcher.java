@@ -1,4 +1,4 @@
-package br.com.testedx.util;
+package br.com.testedx.java.util;
 
 /**
  * Created by rafaela on 01/07/2017.

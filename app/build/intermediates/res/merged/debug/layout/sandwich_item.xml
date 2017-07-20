@@ -3,7 +3,7 @@
 
     <data>
 
-        <import type="br.com.testedx.util.StringUtil" />
+        <import type="br.com.testedx.java.util.StringUtil" />
         <import type="br.com.testedx.enums.PromotionEnum" />
         <import type="android.view.View" />
 

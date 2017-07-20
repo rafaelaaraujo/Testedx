@@ -19,8 +19,8 @@ import br.com.testedx.BR;
 import br.com.testedx.R;
 import br.com.testedx.editOrder.listener.OnClickIngredientListener;
 import br.com.testedx.model.Ingredient;
-import br.com.testedx.util.Constants;
-import br.com.testedx.util.ImageUtil;
+import br.com.testedx.java.util.Constants;
+import br.com.testedx.java.util.ImageUtil;
 
 /**
  * Created by rafaela.araujo on 30/06/2017.

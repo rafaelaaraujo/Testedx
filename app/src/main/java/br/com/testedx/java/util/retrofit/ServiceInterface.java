@@ -1,4 +1,4 @@
-package br.com.testedx.util.retrofit;
+package br.com.testedx.java.util.retrofit;
 
 import org.json.JSONObject;
 

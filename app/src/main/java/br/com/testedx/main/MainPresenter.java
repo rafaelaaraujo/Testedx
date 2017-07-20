@@ -5,7 +5,7 @@ import java.util.List;
 
 import br.com.testedx.R;
 import br.com.testedx.model.Ingredient;
-import br.com.testedx.util.retrofit.RetrofitManager;
+import br.com.testedx.java.util.retrofit.RetrofitManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 

@@ -14,7 +14,7 @@ import java.util.List;
 import br.com.testedx.R;
 import br.com.testedx.model.Ingredient;
 import br.com.testedx.shoppingCart.model.Order;
-import br.com.testedx.util.Constants;
+import br.com.testedx.java.util.Constants;
 
 /**
  * Created by rafaela on 28/06/2017.

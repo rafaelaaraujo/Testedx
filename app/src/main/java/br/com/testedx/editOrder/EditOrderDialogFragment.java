@@ -22,13 +22,11 @@ import java.util.List;
 import br.com.testedx.R;
 import br.com.testedx.databinding.FragmentEditorderBinding;
 import br.com.testedx.editOrder.listener.OnClickIngredientListener;
-import br.com.testedx.enums.PromotionEnum;
 import br.com.testedx.main.MainActivity;
 import br.com.testedx.model.Ingredient;
 import br.com.testedx.model.Sandwich;
-import br.com.testedx.util.Constants;
-import br.com.testedx.util.ImageUtil;
-import br.com.testedx.util.StringUtil;
+import br.com.testedx.java.util.Constants;
+import br.com.testedx.java.util.ImageUtil;
 
 
 /**

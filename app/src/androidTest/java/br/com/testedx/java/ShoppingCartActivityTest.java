@@ -1,18 +1,19 @@
-package br.com.testedx;
+package br.com.testedx.java;
 
 import android.os.SystemClock;
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.support.v7.widget.RecyclerView;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import br.com.testedx.R;
 import br.com.testedx.main.MainActivity;
-import br.com.testedx.util.RecyclerViewMatcher;
+import br.com.testedx.java.util.RecyclerViewMatcher;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -20,8 +21,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static br.com.testedx.util.RecyclerViewMatcher.getRecicleItemCount;
-import static br.com.testedx.util.RecyclerViewMatcher.nthChildOf;
+import static br.com.testedx.java.util.RecyclerViewMatcher.nthChildOf;
 
 /**
  * Created by rafaela on 01/07/2017.
@@ -35,7 +35,7 @@ public class ShoppingCartActivityTest {
 
     @Before
     public void addItemInCart_openActivity() {
-        onView(withId(R.id.recicle_menu)).perform(
+        onView(ViewMatchers.withId(R.id.recicle_menu)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(1, RecyclerViewMatcher.clickChildViewWithId(R.id.btn_add_cart)));
         SystemClock.sleep(1000);
         onView(withText("OK")).perform(click());

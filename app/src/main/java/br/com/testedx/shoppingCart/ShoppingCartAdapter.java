@@ -16,7 +16,7 @@ import br.com.testedx.R;
 import br.com.testedx.model.Sandwich;
 import br.com.testedx.shoppingCart.listener.GetSandwichListener;
 import br.com.testedx.shoppingCart.model.Order;
-import br.com.testedx.util.ImageUtil;
+import br.com.testedx.java.util.ImageUtil;
 import br.com.testedx.viewholder.ViewHolder;
 
 /**

@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.testedx.enums.PromotionEnum;
-import br.com.testedx.main.MainActivity;
 import br.com.testedx.model.Ingredient;
 import br.com.testedx.model.Sandwich;
-import br.com.testedx.util.Constants;
-import br.com.testedx.util.StringUtil;
+import br.com.testedx.java.util.Constants;
+import br.com.testedx.java.util.StringUtil;
 
 /**
  * Created by rafaela on 29/06/2017.

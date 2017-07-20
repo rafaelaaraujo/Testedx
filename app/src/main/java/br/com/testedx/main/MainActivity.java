@@ -21,7 +21,7 @@ import br.com.testedx.model.Ingredient;
 import br.com.testedx.model.Sandwich;
 import br.com.testedx.promotion.PromotionFragment;
 import br.com.testedx.shoppingCart.ShoppingCartActivity;
-import br.com.testedx.util.Constants;
+import br.com.testedx.java.util.Constants;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, BottomNavigationView.OnNavigationItemSelectedListener {
 

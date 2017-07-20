@@ -1,26 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_media_action.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_template_big_media.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\1bb14ad6030a2faf3b8b27c51bf446af98f68cd5\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     }
 ]

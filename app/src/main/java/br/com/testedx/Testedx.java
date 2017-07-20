@@ -2,6 +2,7 @@ package br.com.testedx;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -30,5 +31,11 @@ public class Testedx extends Application {
         config.denyCacheImageMultipleSizesInMemory();
         config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
         ImageLoader.getInstance().init(config.build());
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

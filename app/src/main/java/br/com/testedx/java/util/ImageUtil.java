@@ -1,4 +1,4 @@
-package br.com.testedx.util;
+package br.com.testedx.java.util;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 

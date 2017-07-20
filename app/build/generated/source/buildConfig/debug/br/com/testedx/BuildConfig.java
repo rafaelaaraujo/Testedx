@@ -11,6 +11,6 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Fields from build type: debug
-  public static final String IP = "192.168.6.149";
+  public static final String IP = "192.168.0.7";
   public static final Integer PORT = 8080;
 }

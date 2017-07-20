@@ -15,7 +15,7 @@ import br.com.testedx.BR;
 import br.com.testedx.R;
 import br.com.testedx.menu.listener.OnRecyclerViewClickListener;
 import br.com.testedx.model.Sandwich;
-import br.com.testedx.util.ImageUtil;
+import br.com.testedx.java.util.ImageUtil;
 import br.com.testedx.viewholder.ViewHolder;
 
 /**
