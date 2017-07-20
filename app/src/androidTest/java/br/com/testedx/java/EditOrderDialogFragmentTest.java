@@ -1,6 +1,7 @@
 package br.com.testedx.java;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
@@ -47,6 +48,7 @@ public class EditOrderDialogFragmentTest {
         // intent stuff
         grouchyIntent.putExtra("EXTRA_IS_GROUCHY", true);
         mActivityTestRule.launchActivity(grouchyIntent);
+        SystemClock.sleep(5000);
 
         onView(ViewMatchers.withId(R.id.recicle_menu)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(0, RecyclerViewMatcher.clickChildViewWithId(R.id.btn_customize)));
