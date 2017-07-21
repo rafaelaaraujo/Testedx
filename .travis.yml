@@ -12,6 +12,20 @@ env:
   matrix:
     - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
 
+install:
+  - ./gradlew --version # Show version and download Gradle Wrapper when is not present in cache
+  - ./gradlew clean # Clean project and download Android dependencies when are not present in cache
+  
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+    
 before_install:
  - chmod +x gradlew
  - mkdir "$ANDROID_HOME/licenses" || true
@@ -34,11 +48,12 @@ android:
     - 'google-gdk-license-.+'
     - '.+'
 
+# Emulator Management: Create, Start and Wait
 before_script:
-    - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-    - emulator -avd test -no-skin -no-audio -no-window &
-    - android-wait-for-emulator
-    - adb shell input keyevent 82 &
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
     
 script:
     - ./gradlew connectedAndroidTest coveralls
