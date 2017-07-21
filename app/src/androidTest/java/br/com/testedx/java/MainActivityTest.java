@@ -5,10 +5,7 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.squareup.okhttp.mockwebserver.Dispatcher;
-import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
-import com.squareup.okhttp.mockwebserver.RecordedRequest;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -16,11 +13,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import br.com.testedx.R;
-import br.com.testedx.main.MainActivity;
 import br.com.testedx.java.util.Constants;
 import br.com.testedx.java.util.RestServiceTestHelper;
+import br.com.testedx.main.MainActivity;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -65,6 +61,6 @@ public class MainActivityTest {
     @Test
     public void clickMenuItem_showShoppingCart() {
         onView(withId(R.id.cart)).perform(click());
-        onView(withId(R.id.shopping_cart)).check(matches(isDisplayed()));
+        onView(withId(R.id.recicle_cart)).check(matches(isDisplayed()));
     }
 }

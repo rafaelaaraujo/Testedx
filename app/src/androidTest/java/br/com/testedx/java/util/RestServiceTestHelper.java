@@ -1,6 +1,7 @@
 package br.com.testedx.java.util;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.squareup.okhttp.mockwebserver.Dispatcher;
 import com.squareup.okhttp.mockwebserver.MockResponse;
@@ -40,15 +41,18 @@ public class RestServiceTestHelper {
         @Override
         public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
             try {
+                Log.e("DISPACHER-----",request.getPath()+"//"+request.getRequestLine());
                 switch (request.getPath()) {
                     case "/api/ingrediente/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "ingredients_200_ok_response.json"));
-                    case "/api/lanche/{id}/":
+                    case "/api/lanche/1":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "item_200_ok_response.json"));
                     case "/api/pedido/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "cart_200_ok_response.json"));
                     case "/api/lanche/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "sandwich_200_ok_response.json"));
+                    case "/api/promocao/":
+                        return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "promotion_200_ok_response.json"));
                 }
 
             } catch (Exception e) {
