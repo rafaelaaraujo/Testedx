@@ -28,20 +28,20 @@
         "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\c3e0fe158625c6e80b1f7fdc9c3f140e978aeec7\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "C:\\Users\\rafaela.araujo\\Documents\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
         "source": "C:\\Users\\rafaela.araujo\\.android\\build-cache\\f5c6cef32d64e810aaeeca9b4e70f2589e7a1162\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\rafaela\\.android\\build-cache\\f50ddd3727c98101b4591911199cfc6781f1de1f\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
         "merged": "E:\\repositorios\\Testedx\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",

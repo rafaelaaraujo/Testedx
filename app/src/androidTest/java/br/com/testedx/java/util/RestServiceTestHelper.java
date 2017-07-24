@@ -41,7 +41,6 @@ public class RestServiceTestHelper {
         @Override
         public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
             try {
-                Log.e("DISPACHER-----",request.getPath()+"//"+request.getRequestLine());
                 switch (request.getPath()) {
                     case "/api/ingrediente/":
                         return new MockResponse().setResponseCode(200).setBody(RestServiceTestHelper.getStringFromFile(getInstrumentation().getContext(), "ingredients_200_ok_response.json"));

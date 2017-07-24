@@ -60,22 +60,4 @@ public class RecyclerViewMatcher {
         };
     }
 
-    public static  int getRecicleItemCount(int recicleID){
-        final int[] numberOfAdapterItems = new int[1];
-        onView(withId(recicleID)).check(matches(new TypeSafeMatcher<View>() {
-            @Override
-            public boolean matchesSafely(View view) {
-                RecyclerView listView = (RecyclerView) view;
-                numberOfAdapterItems[0] = listView.getAdapter().getItemCount();
-                return true;
-            }
-
-            @Override
-            public void describeTo(Description description) {
-            }
-        }));
-
-        return numberOfAdapterItems[0];
-    }
-
 }
